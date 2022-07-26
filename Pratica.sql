@@ -19,10 +19,10 @@ JOIN schools ON educations."schoolId" = schools.id
 WHERE users.id = 30
 
 -- Questão 4:
-SELECT users.id, users.name, r.name AS role, companies.name AS company, experiences."startDate" 
+SELECT users.id, users.name, roles.name AS role, companies.name AS company, experiences."startDate" 
 FROM experiences 
 JOIN users ON experiences."userId" = users.id
-JOIN roles r ON experiences."roleId" = r.id
+JOIN roles  ON experiences."roleId" = roles.id
 JOIN companies ON experiences."companyId" = companies.id
 WHERE users.id=50
 AND experiences."endDate" IS NULL
